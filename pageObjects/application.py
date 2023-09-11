@@ -2,7 +2,7 @@ from playwright.sync_api import Playwright
 
 class App:
     def __init__(self, playwright: Playwright):
-        self.browser = playwright.chromium.launch(headless=False)  # создание экземпляра раузера
+        self.browser = playwright.chromium.launch(headless=True)  # создание экземпляра раузера
         self.context = self.browser.new_context()  # создание контекста (то что аля анонимный вход)
         self.page = self.context.new_page()  # создание страницы (там где вкладки браузера) - экземпляр страницы
         self.page.goto("http://127.0.0.1:5000/login") # открываем ссылку на сайт
